@@ -62,7 +62,7 @@ export default {
                     let usuario = doc.data()
                     this.$emit('onIngresar', usuario)
                 }else{
-                    this.enviarNotificacion('Nno se encontró la información del usuario', 'Error')
+                    this.enviarNotificacion('No se encontró la información del usuario', 'Error')
                 }
              }
         } catch (error) {
@@ -72,7 +72,7 @@ export default {
                     this.enviarNotificacion('Usuario no válido. Revisa tu correo y contraseña', 'Warning')
                     break
                 default: 
-                    this.enviarNotificacion('Ocurrió un error verificando la información', 'Error ')
+                    this.enviarNotificacion('Ocurrió unxxx error verificando la información', 'Error ')
             }
         }           
             },

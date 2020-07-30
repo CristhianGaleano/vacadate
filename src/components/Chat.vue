@@ -48,7 +48,8 @@
                                 </v-toolbar-title>
                             </v-toolbar>
                             <v-container ref="chatContainer" class="pa-0 ma-0 scroll-y overflow-y-auto" id="scroll-target" style="max-height: 640px">
-                               <v-card-text :style="'max-height: ' + height + 'px;'" v-scroll:#scroll-target="onScroll">
+                               <v-card-text>
+
                                     <v-flex xs7 :offset-xs5="item.uid == usuario.uid" class="my-3" v-for="item in chat" :key="item.mid">
                                         <v-layout column>
                                             <div class="chat-fecha">{{ convertirFecha(item.fechaEnvio) }}</div>
@@ -124,15 +125,18 @@ export default {
               .orderBy('fechaEnvio')
               .onSnapshot(snapshot => {
                   snapshot.docChanges().forEach(change => {
+                    //   console('Change: '+ change.type)
                       if(change.type == 'added'){//added, modified, remove
+                      console.log('add mensage: detener - consultar chat')
                           let mensaje = change.doc.data()
                           this.chat.push(mensaje)
-
+                            console.log(mensaje)
+                            // console.log('Comprando:' + mensaje.uid +' : '+ this.usuario.uid)
                             // analizar
                             // sino tinene lapropiedad fechaLeido es por que no se ha leido
                           if (!mensaje.fechaLeido && mensaje.uid != this.usuario.uid) {
-                              console.log('marcando msj como leido');
-                              this.marcarMensajeLeido(mensaje)
+                              console.log('marcando msj como leido:'+ this.usuario.uid );
+                            //   this.marcarMensajeLeido(mensaje)
                           }
                       }
 
@@ -160,8 +164,7 @@ export default {
                     { fechaLeido: new Date() }
             )
 
-                // se detecta que no se esta produciendo la eliminacion o el delete
-            // para eliminar el anterior
+            //  verificar si si elimina
             batch.delete(
                 db.collection('usuarios')
                     .doc(this.usuario.uid)
@@ -186,6 +189,7 @@ export default {
                     
                     if(usuario.uid !== this.usuario.uid && usuario.rol != 'user'){
                         // add two properties
+
                         usuario.cantidadMensajes = 0
                         usuario.ultimoMensaje = ''
                         this.usuarios.push(usuario)
@@ -212,11 +216,16 @@ export default {
                             
                             switch (change.type) {
                                 case 'added':
+                                    // escuchador para la lista side left of ussers: ok, esta funcionando solo al recargar la pagina
+                                    console.log('Consultar chat sin leer: add')
+                                        console.log(usuario.cantidadMensajes)
                                         usuario.cantidadMensajes++
                                         usuario.ultimoMensaje = mensaje.texto
                                     break;
                             
                                 case 'removed':
+                                    console.log('Consultar chat sin leer: removed')
+                                    console.log(usuario.cantidadMensajes)
                                     usuario.cantidadMensajes--
                                     usuario.ultimoMensaje = ''
 

@@ -142,14 +142,7 @@ export default {
             }
                
         } catch (error) {
-            switch (error.code){
-                case 'auth/user-not-fond':
-                case 'auth/wrong-password':
-                    this.enviarNotificacion('Usuario no válido. Revisa tu correo y contraseña', 'Warning')
-                    break
-                default: 
-                    this.enviarNotificacion('Ocurrió un error verificando la información cc', 'Error ')
-            }
+            console.log(error)
         }           
             },
         
