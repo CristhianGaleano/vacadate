@@ -3,7 +3,7 @@
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-toolbar-title class="headline monster-font">
-          Ventanilla Académica
+           <span style="font-size: 1.2rem;"> Bienvenido a la Ventanilla Académica</span>
         </v-toolbar-title>
 
       </div>
@@ -43,7 +43,7 @@
 
     <v-footer color="primary dark">
       <v-layout justify-center>
-        <span>Universidad Católica de Pereira - Oficina de Comunicaciones - 2020</span>
+        <span color="white" style="font-size: 1rem;"> <strong color="white">Universidad Católica de Pereira</strong> - Oficina de Comunicaciones - 2020</span>
       </v-layout>
     </v-footer>
 
