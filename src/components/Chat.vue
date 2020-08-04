@@ -4,7 +4,7 @@
             <v-card>
                 <v-toolbar color="primary"  dark dense>
                     <v-toolbar-title>
-                        Contactos
+                        Asesores
                     </v-toolbar-title>
                 </v-toolbar>
                 <v-list two-line class="pa-0 ma-0 scroll-y overflow-y-auto" id="scroll-target" style="max-height: 640px">
