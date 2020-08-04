@@ -14,7 +14,7 @@
 
       <v-spacer></v-spacer>
       <v-layout v-if="usuario" align-center justify-end>
-        <v-avatar size="40" color="white">
+        <v-avatar size="40" color="fondouser">
           <v-img :src="usuario.foto"></v-img>
         </v-avatar>
         <span class="ml-1
