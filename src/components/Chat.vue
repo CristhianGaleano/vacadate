@@ -136,9 +136,10 @@ export default {
                             // sino tinene lapropiedad fechaLeido es por que no se ha leido
                           if (!mensaje.fechaLeido && mensaje.uid != this.usuario.uid) {
                               console.log('marcando msj como leido:'+ this.usuario.uid );
-                            //   this.marcarMensajeLeido(mensaje)
+                              this.marcarMensajeLeido(mensaje)
                           }
                       }
+
 
                         // El DOM esta actualizado y con  el this esta vinculado a la instancia atual
                       this.$nextTick(() => {
