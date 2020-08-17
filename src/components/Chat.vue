@@ -214,27 +214,23 @@ export default {
                         let usuario = this.usuarios.find(u => u.uid == mensaje.uid)
 
                         if (usuario) {
-                            
-                            switch (change.type) {
-                                case 'added':
-                                    // escuchador para la lista side left of ussers: ok, esta funcionando solo al recargar la pagina
-                                    console.log('Consultar chat sin leer: add')
-                                        console.log(usuario.cantidadMensajes)
-                                        usuario.cantidadMensajes++
-                                        usuario.ultimoMensaje = mensaje.texto
-                                    break;
-                            
-                                case 'removed':
-                                    console.log('Consultar chat sin leer: removed')
-                                    console.log(usuario.cantidadMensajes)
-                                    usuario.cantidadMensajes--
-                                    usuario.ultimoMensaje = ''
+                         
+                         switch(change.type){
+                             case 'added':
+                             usuario.cantidadMensajes++
+                            usuario.ultimoMensaje = mensaje.texto
+                             break
 
-                                    if(usuario.cantidadMensajes < 0){
-                                        usuario.cantidadMensajes = 0
-                                    }
-                                    break;
+                             case 'removed':
+                                 usuario.cantidadMensajes--
+                            usuario.ultimoMensaje = ''
+
+                            if(usuario.cantidadMensajes < 0){
+                                usuario.cantidadMensajes = 0    
                             }
+                            break
+                         }
+                            
                         }
                     });
                 }, () => {
