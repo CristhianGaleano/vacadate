@@ -41,9 +41,9 @@
     </v-snackbar>
 
 
-    <v-footer color="primary dark">
+    <v-footer color="primary" dark>
       <v-layout justify-center>
-        <span color="white" style="font-size: 1rem;"> <strong color="white">Universidad Católica de Pereira</strong> - Oficina de Comunicaciones - 2020</span>
+        <span> <strong>Universidad Católica de Pereira</strong> - Oficina de Comunicaciones - 2020</span>
       </v-layout>
     </v-footer>
 

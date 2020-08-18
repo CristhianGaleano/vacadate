@@ -114,7 +114,7 @@ export default {
         consultarChat () {
             this.chat = []
             // Cada vez que consultemos n nuevo chat, detenemos el anterior
-            if(this.detenerChat){
+            if(!this.detenerChat){
                 this.detenerChat()
             }
 
@@ -152,8 +152,11 @@ export default {
               () => {
                   this.enviarNotificacion('Ocurrió un error recuperando los mensajes', 'error')
               })
+            //   codigo de prueba
+            //   this.chat = [] 
         },
         marcarMensajeLeido(mensaje) {
+            // coloca leido en contactos y elimina el mensaje en usuarios: verifcado
             let batch = db.batch()
 
             batch.update(
@@ -188,42 +191,45 @@ export default {
                     let usuario = doc.data()
                     // add user record to end
                     
-                    if(usuario.uid !== this.usuario.uid && usuario.rol != 'user'){
+                    if(usuario.uid !== this.usuario.uid){
+                    // if(usuario.uid !== this.usuario.uid && usuario.rol != 'user'){
                         // add two properties
-
                         usuario.cantidadMensajes = 0
                         usuario.ultimoMensaje = ''
                         this.usuarios.push(usuario)
                     }
-                });
+                })
                 this.consultarChatSinLeer()
             } catch (error) {
                 this.enviarNotificacion('Ocurrió un error al consultar la lista de usuarios', 'error')
             }
         },
         consultarChatSinLeer () {
-            db.collection('usuarios')
             // user current
+            db.collection('usuarios')
                 .doc(this.usuario.uid)
                 .collection('chat-sin-leer')
                 .orderBy('fechaEnvio')
                 .onSnapshot( snapshot => {
                     snapshot.docChanges().forEach(change => {//added. modified o remove
-                        let mensaje = change.doc.data()
+                    // mensage recuperado
 
+                        let mensaje = change.doc.data()
+                    // todos los mensages combinados
                         let usuario = this.usuarios.find(u => u.uid == mensaje.uid)
 
                         if (usuario) {
                          
                          switch(change.type){
+
                              case 'added':
-                             usuario.cantidadMensajes++
-                            usuario.ultimoMensaje = mensaje.texto
+                                usuario.cantidadMensajes++
+                                usuario.ultimoMensaje = mensaje.texto
                              break
 
                              case 'removed':
                                  usuario.cantidadMensajes--
-                            usuario.ultimoMensaje = ''
+                                 usuario.ultimoMensaje = ''
 
                             if(usuario.cantidadMensajes < 0){
                                 usuario.cantidadMensajes = 0    
@@ -232,7 +238,7 @@ export default {
                          }
                             
                         }
-                    });
+                    })
                 }, () => {
                     this.enviarNotificacion('Ocurrió un error recuperando mensajes sin leer','error')
                 } )
@@ -250,16 +256,15 @@ export default {
             try {
                 // await para garantizar que la consulta termine antes de preguntar si el usuario existe
                 // Accede a la colección 'contactos
-                let doc = await db.collection('contactos')
                 // obtiene el documento con el id en 'cid'
+                let doc = await db.collection('contactos')
                             .doc(this.cid)
                             .get()
 
                 if(!doc.exists){
                 // si no existe entonces crea el documento
-                    // creacion deñ documento 
+                    // creacion el documento 
                     await db.collection('contactos')
-                    
                             .doc(this.cid)
                             .set({cid: this.cid})
                 }
@@ -318,7 +323,9 @@ export default {
             }
             finally {
                 this.enviandoMensaje = false
-                this.$refs.txtMensaje.focus()
+                this.$nextTick(() => {
+                    this.$refs.txtMensaje.focus()
+                })
             }
         },
         onResize () {
