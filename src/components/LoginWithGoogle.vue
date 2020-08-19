@@ -1,12 +1,41 @@
 <template>
 <!-- https://firebase.google.com/docs/auth/web/manage-users -->
 <!-- https://desarrolloweb.com/articulos/introduccion-firebase-storage.html -->
-<!-- v-layout: en bootstrap es el container -->
-    <v-layout justify-center align-center>
 
 
+    <v-container>
 
-        <!-- La column -->
+        <v-layout justify-start>
+                <v-flex lg5 >
+                    <v-card>
+                <v-toolbar color="infoPublicidad">
+                    <v-toolbar-title>
+                        La ventanilla Académica
+                    </v-toolbar-title>
+                </v-toolbar>
+                <!-- <v-card-text>
+                    <v-text-field autofocus v-model="email" label="email"></v-text-field>
+                    <v-text-field @keyup.enter="ingresar" v-model="password" label="Password" type="password"></v-text-field>
+                </v-card-text> -->
+                <v-card-text>
+                    <v-layout >
+                       <div class="row">
+                           <div class="col-md-12">
+                               <p>
+                                   Orienta su actuar a través del Proyecto Educativo a través de sus facultades y áreas administrativas que acompañar el quehacer formativo, investigativo y de proyección social.
+                               </p>
+                           </div>
+                       </div>
+                    </v-layout>
+                </v-card-text>
+            </v-card>
+                </v-flex>
+        </v-layout>
+        <!-- end fila -->
+        
+        <!-- fila -->
+        <v-layout>
+            <!-- La column -->
         <v-flex xs12 sm8 md6 lg5 xl4 mr-5  align-center>
             <!-- la estructura  -->
             <v-card>
@@ -59,8 +88,10 @@
             </v-card>
         </v-flex>
 
+        </v-layout>
+        
 
-    </v-layout>
+    </v-container>
     
 </template>
 
