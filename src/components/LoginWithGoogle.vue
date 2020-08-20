@@ -27,10 +27,10 @@
                            </div>
                               <div class="row">
                            <div class="col-md-12">
-                               <a href="https://www.ucp.edu.co/pregrado/">Oferta de Pregrados</a>
+                                <p><a href="https://www.ucp.edu.co/pregrado/">Oferta de Pregrados</a></p>
                            </div>
                            <div class="col-md-12">
-                               <a href="https://www.ucp.edu.co/posgrado/">Oferta de Posgrados</a>
+                               <p><a href="https://www.ucp.edu.co/posgrado/">Oferta de Posgrados</a></p>
                            </div>
                        </div>
                        </div>
@@ -145,11 +145,11 @@ export default {
 
                 storage.ref('usuarios/'+uidCurrentUser+'/photo.jpg')
                 let task = storage.put(photoCurrentUser)
-                console.log(task);
+                console.log("task: "+task);
             }
                
         } catch (error) {
-            console.log(error)
+            console.log("Ocurrio un error en login"+error)
         }           
             },
         

@@ -63,7 +63,7 @@
                                </v-card-text>
                             </v-container>
                             <v-card-text >
-                                <v-text-field ref="txtMensaje" v-model="mensaje" @keyup.enter="enviarMensaje" :loading="enviandoMensaje" :disabled="enviandoMensaje" hide-details label="Escribe un mensaje"></v-text-field>
+                                <v-text-field ref="txtMensaje" v-model="mensaje" @keyup.enter="enviarMensaje" :loading="enviandoMensaje" :disabled="enviandoMensaje"  hide-details label="Escribe un mensaje"></v-text-field>
                             </v-card-text>
                          </v-card>
                      </v-flex>
@@ -111,15 +111,16 @@ export default {
         convertirFecha (timeStamp) {
             return timeStamp.toDate().toISOString().substring(0,16).replace('T', ' ')
         },
+        // consulta los mensages para mostrarlos en la gui al seleccionar el user
         consultarChat () {
             this.chat = []
             // Cada vez que consultemos n nuevo chat, detenemos el anterior
-            if(!this.detenerChat){
+            // sino es nulo, detenemos en chat anterior
+            if(this.detenerChat){
                 this.detenerChat()
             }
 
-            this.detenerChat = db
-              .collection('contactos')
+            this.detenerChat = db.collection('contactos')
               .doc(this.cid)
               .collection('chat')
               .orderBy('fechaEnvio')
@@ -133,12 +134,14 @@ export default {
                             console.log(mensaje)
                             // console.log('Comprando:' + mensaje.uid +' : '+ this.usuario.uid)
                             // analizar
-                            // sino tinene lapropiedad fechaLeido es por que no se ha leido
-                          if (!mensaje.fechaLeido && mensaje.uid != this.usuario.uid) {
+                             // sino tinene lapropiedad fechaLeido es por que no se ha leido
+                              if (!mensaje.fechaLeido && mensaje.uid !== this.usuario.uid) {
                               console.log('marcando msj como leido:'+ this.usuario.uid );
+                            //   se encarga de insertar(contactos) y eliminar mensage(usuarios), esta última tiene el escuchador(la collection) para sumar o restar
                               this.marcarMensajeLeido(mensaje)
                           }
                       }
+
 
 
                         // El DOM esta actualizado y con  el this esta vinculado a la instancia atual
@@ -149,7 +152,7 @@ export default {
                       })
                   })
               }, 
-              () => {
+              () => {  
                   this.enviarNotificacion('Ocurrió un error recuperando los mensajes', 'error')
               })
             //   codigo de prueba
@@ -168,7 +171,7 @@ export default {
                     { fechaLeido: new Date() }
             )
 
-            //  verificar si si elimina
+            //  se elimina pero lo hace al recibir msj, y el escuchador resta unidad
             batch.delete(
                 db.collection('usuarios')
                     .doc(this.usuario.uid)
@@ -179,13 +182,13 @@ export default {
 
             batch.commit()
         },
-        // implemenmtar escuchador: mostrar al usuario nuevo que envia un chat, instantaneamente
+        
         async consultarUsuarios () {
             try {
                 // Accede a la colección 'usuarios'
                 let docs = await db.collection('usuarios')
-                // Como vamos a obtener todos los documentos entonces get()
                                     .get()
+                // Como vamos a obtener todos los documentos entonces get()
                 // recorriendo cada documento
                 docs.forEach(doc => {
                     let usuario = doc.data()
@@ -194,16 +197,20 @@ export default {
                     if(usuario.uid !== this.usuario.uid){
                     // if(usuario.uid !== this.usuario.uid && usuario.rol != 'user'){
                         // add two properties
+                        console.log('adicionando properties cant text')
                         usuario.cantidadMensajes = 0
                         usuario.ultimoMensaje = ''
                         this.usuarios.push(usuario)
                     }
                 })
+                // para leer y mostrar contador
                 this.consultarChatSinLeer()
             } catch (error) {
                 this.enviarNotificacion('Ocurrió un error al consultar la lista de usuarios', 'error')
             }
         },
+
+        // aqui lee los mensages sin leer y lo suma
         consultarChatSinLeer () {
             // user current
             db.collection('usuarios')
@@ -211,15 +218,15 @@ export default {
                 .collection('chat-sin-leer')
                 .orderBy('fechaEnvio')
                 .onSnapshot( snapshot => {
-                    snapshot.docChanges().forEach(change => {//added. modified o remove
+                    snapshot.docChanges().forEach( change => {//added. modified o remove
                     // mensage recuperado
-
                         let mensaje = change.doc.data()
-                    // todos los mensages combinados
+                    // todos los mensages estan combinados, se identifica y se suma una unidad
                         let usuario = this.usuarios.find(u => u.uid == mensaje.uid)
 
+    // sino es nullo
                         if (usuario) {
-                         
+                                
                          switch(change.type){
 
                              case 'added':
@@ -270,7 +277,6 @@ export default {
                 }
 
                 this.usuarioSeleccionado = usuario
-
                 this.consultarChat() 
             } catch (error) {
                 this.enviarNotificacion('Ocurrió un error recuperando la información','error')
@@ -296,6 +302,7 @@ export default {
             
             // Procesamiento por lotes(o todo se guarda o nada)
             let batch = db.batch()
+            // la lista del chat
             batch.set(
                 db.collection('contactos')
                         .doc(this.cid)
@@ -304,6 +311,7 @@ export default {
                         mensajeEnviado
             )
 
+            // lista general
             batch.set(
                 db.collection('usuarios')
                         .doc(this.usuarioSeleccionado.uid)
@@ -315,7 +323,6 @@ export default {
             try {
                 
                 await batch.commit()
-
                 
                 this.mensaje = ''
             } catch (error) {
