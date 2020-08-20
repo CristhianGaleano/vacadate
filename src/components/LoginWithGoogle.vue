@@ -5,12 +5,12 @@
 
     <v-container>
 
-        <v-layout justify-start>
-                <v-flex lg5 >
+        <v-layout row  wrap justify-center align-start style="height: 240px;">
+                <v-flex lg5  mx-10>
                     <v-card>
                 <v-toolbar color="infoPublicidad">
                     <v-toolbar-title>
-                        La ventanilla Académica
+                        La Vicerrectoría Académica
                     </v-toolbar-title>
                 </v-toolbar>
                 <!-- <v-card-text>
@@ -25,32 +25,7 @@
                                    Orienta su actuar a través del Proyecto Educativo a través de sus facultades y áreas administrativas que acompañar el quehacer formativo, investigativo y de proyección social.
                                </p>
                            </div>
-                       </div>
-                    </v-layout>
-                </v-card-text>
-            </v-card>
-                </v-flex>
-        </v-layout>
-        <!-- end fila -->
-        
-        <!-- fila -->
-        <v-layout>
-            <!-- La column -->
-        <v-flex xs12 sm8 md6 lg5 xl4 mr-5  align-center>
-            <!-- la estructura  -->
-            <v-card>
-                <v-toolbar color="infoPublicidad">
-                    <v-toolbar-title>
-                        Información de Interés
-                    </v-toolbar-title>
-                </v-toolbar>
-                <!-- <v-card-text>
-                    <v-text-field autofocus v-model="email" label="email"></v-text-field>
-                    <v-text-field @keyup.enter="ingresar" v-model="password" label="Password" type="password"></v-text-field>
-                </v-card-text> -->
-                <v-card-text>
-                    <v-layout justify-center>
-                       <div class="row">
+                              <div class="row">
                            <div class="col-md-12">
                                <a href="https://www.ucp.edu.co/pregrado/">Oferta de Pregrados</a>
                            </div>
@@ -58,15 +33,13 @@
                                <a href="https://www.ucp.edu.co/posgrado/">Oferta de Posgrados</a>
                            </div>
                        </div>
+                       </div>
                     </v-layout>
                 </v-card-text>
             </v-card>
-        </v-flex>
+                </v-flex>
 
-
-
-
-
+                
         <!-- La column -->
         <v-flex xs12 sm8 md6 lg5 xl4>
             <!-- la estructura  -->
@@ -88,7 +61,10 @@
             </v-card>
         </v-flex>
 
+             
         </v-layout>
+        <!-- end fila -->
+        
         
 
     </v-container>
