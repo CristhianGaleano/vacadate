@@ -51,5 +51,12 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "<<<<<<< HEAD\r # monster-chat",
+  "main": "babel.config.js",
+  "keywords": [
+    "chat-ucp"
+  ],
+  "author": "Cristhian Galeano",
+  "license": "ISC"
 }
