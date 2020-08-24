@@ -1,6 +1,6 @@
 <template>
-    <v-layout v-resize="onResize">
-         <v-flex xs12 sm4 lg4 class="usuarios" v-if="mostrarLista">
+    <v-layout v-resize="onResize" justify-space-between row>
+         <v-flex xs-12 sm5 md5 lg3 class="usuarios" v-if="mostrarLista">
             <v-card>
                 <v-toolbar color="primary"  dark dense>
                     <v-toolbar-title>
@@ -21,6 +21,7 @@
                             <v-list-item-content>
                                 <v-list-item-title v-html="usuario.nombre" class="monster-font"></v-list-item-title>
                                 <v-list-item-subtitle v-html="usuario.ultimoMensaje"></v-list-item-subtitle>
+                              
                             </v-list-item-content>
 
                             <v-list-item-action v-if="usuario.cantidadMensajes > 0">
@@ -28,12 +29,18 @@
                                     <span slot="badge">{{ usuario.cantidadMensajes }}</span>
                                 </v-badge>
                             </v-list-item-action>
+
+                            
+                            
                         </v-list-item>
+
+                        
+
                     </template>
                 </v-list>
             </v-card>
          </v-flex>
-         <v-flex xs12 sm8 lg5 v-if="mostrarChat">
+         <v-flex xs12 sm5 md3 lg5 v-if="mostrarChat">
              <v-container fill-height class="pa-0 ma-0" >
                <v-layout align-end>
                      <v-flex>
@@ -45,6 +52,7 @@
                                         <v-img :src="usuarioSeleccionado.foto" ></v-img>
                                     </v-avatar>
                                     <span class="ml-3" monster-font>{{ usuarioSeleccionado.nombre }}</span>
+                                   
                                 </v-toolbar-title>
                             </v-toolbar>
                             <v-container ref="chatContainer" class="pa-0 ma-0 scroll-y overflow-y-auto" id="scroll-target" style="max-height: 640px">
@@ -57,7 +65,9 @@
                                                 <v-card-text>
                                                     <div>{{item.texto}}</div>
                                                 </v-card-text>
+                                                
                                             </v-card>
+
                                         </v-layout>
                                     </v-flex>
                                </v-card-text>
@@ -69,6 +79,70 @@
                      </v-flex>
                </v-layout>
              </v-container>
+         </v-flex>
+         <!-- column for interes contacts -->
+
+         <v-flex xs12 sm12 md3 lg4>
+        <!-- end interes contacts -->
+         <v-card>
+                <v-toolbar color="primary"  dark dense>
+                    <v-toolbar-title>
+                        Contactos de interés
+                    </v-toolbar-title>
+                </v-toolbar>
+                <v-list two-line class="pa-0 ma-0  overflow-y-auto" id="scroll-target" style="max-height: 640px">
+                    
+                    <v-expansion-panels hover accordion>
+                        <v-expansion-panel >
+                        <v-expansion-panel-header>Facultad de Arquitectura y Diseño</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            Sheyen Muñoz - <a href="https://api.whatsapp.com/send?phone=573217094635" class="icon-whatsapp" target="_blank" title="Escríbenos">3217094635</a>
+                        </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+                    <v-expansion-panels hover accordion>
+                        <v-expansion-panel >
+                        <v-expansion-panel-header>Facultad de Ciencias Básicas e Ingeniería</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            Alexander Ramirez - <a href="https://api.whatsapp.com/send?phone=573138019791" class="icon-whatsapp" target="_blank" title="Escríbenos">3138019791</a>
+                        </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+                    <v-expansion-panels hover accordion>
+                        <v-expansion-panel >
+                        <v-expansion-panel-header>Facultad de Ciencias Económicas y Administrativas</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            Francy Molano - <a href="https://api.whatsapp.com/send?phone=573046591874" class="icon-whatsapp" target="_blank" title="Escríbenos">3046591874</a>
+                        </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+                    <v-expansion-panels hover accordion>
+                        <v-expansion-panel >
+                        <v-expansion-panel-header>Facultad de Ciencias Humanas, Sociales y de la Educación</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            Juana Gallego - <a href="https://api.whatsapp.com/send?phone=573137912319" class="icon-whatsapp" target="_blank" title="Escríbenos">3046591874</a>
+                        </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+                    <v-expansion-panels hover accordion>
+                        <v-expansion-panel >
+                        <v-expansion-panel-header>Recepción</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            Danis Mosquera - Recepción
+                        </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+                    <v-expansion-panels hover accordion>
+                        <v-expansion-panel >
+                        <v-expansion-panel-header>Financiera</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            Pendiente - <a href="https://api.whatsapp.com/send?phone=573137912319" class="icon-whatsapp" target="_blank" title="Escríbenos">3137371184</a>
+                        </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+                </v-list>
+         </v-card>
+             
          </v-flex>
     </v-layout>
 </template>
@@ -284,6 +358,7 @@ export default {
         },
         regresar () {
             this.usuarioSeleccionado = null
+            this.cid = null
         },
         async enviarMensaje () {
             if(!this.mensaje  || this.enviandoMensaje) { return }
