@@ -96,7 +96,10 @@
                         <v-expansion-panel >
                         <v-expansion-panel-header>Facultad de Arquitectura y Diseño</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            Sheyen Muñoz - <a href="https://api.whatsapp.com/send?phone=573217094635" class="icon-whatsapp" target="_blank" title="Escríbenos">3217094635</a>
+                            Sheyen Muñoz - <a href="https://api.whatsapp.com/send?phone=573217094635" class="icon-whatsapp" target="_blank" title="Escríbenos"><span class="group pa-2">
+        <v-icon>chat</v-icon>
+      </span>3217094635</a>
+                            
                         </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
