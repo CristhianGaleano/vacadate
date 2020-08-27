@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
@@ -52,7 +53,7 @@
     "last 2 versions",
     "not dead"
   ],
-  "description": "<<<<<<< HEAD\r # monster-chat",
+  "description": "monster-chat",
   "main": "babel.config.js",
   "keywords": [
     "chat-ucp"

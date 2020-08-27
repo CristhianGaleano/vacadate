@@ -96,8 +96,8 @@
                         <v-expansion-panel >
                         <v-expansion-panel-header>Facultad de Arquitectura y Diseño</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            Sheyen Muñoz - <a href="https://api.whatsapp.com/send?phone=573217094635" class="icon-whatsapp" target="_blank" title="Escríbenos"><span class="group pa-2">
-        <v-icon>chat</v-icon>
+                            Sheyen Muñoz - <a href="https://api.whatsapp.com/send?phone=573217094635"  target="_blank" title="Escríbenos"><span class="group pa-2">
+        <v-icon>fab fa-whatsapp</v-icon>
       </span>3217094635</a>
                             
                         </v-expansion-panel-content>
@@ -107,15 +107,15 @@
                         <v-expansion-panel >
                         <v-expansion-panel-header>Facultad de Ciencias Básicas e Ingeniería</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            Alexander Ramirez - <a href="https://api.whatsapp.com/send?phone=573138019791" class="icon-whatsapp" target="_blank" title="Escríbenos">3138019791</a>
+                            Alexander Ramirez - <a href="https://api.whatsapp.com/send?phone=573138019791"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3138019791</a>
                         </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
                     <v-expansion-panels hover accordion>
                         <v-expansion-panel >
-                        <v-expansion-panel-header>Facultad de Ciencias Económicas y Administrativas</v-expansion-panel-header>
+                        <v-expansion-panel-header dark>Facultad de Ciencias Económicas y Administrativas</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            Francy Molano - <a href="https://api.whatsapp.com/send?phone=573046591874" class="icon-whatsapp" target="_blank" title="Escríbenos">3046591874</a>
+                            Francy Molano - <a href="https://api.whatsapp.com/send?phone=573046591874"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3046591874</a>
                         </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
@@ -123,7 +123,7 @@
                         <v-expansion-panel >
                         <v-expansion-panel-header>Facultad de Ciencias Humanas, Sociales y de la Educación</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            Juana Gallego - <a href="https://api.whatsapp.com/send?phone=573137912319" class="icon-whatsapp" target="_blank" title="Escríbenos">3046591874</a>
+                            Juana Gallego - <a href="https://api.whatsapp.com/send?phone=573137912319"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3046591874</a>
                         </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
@@ -139,7 +139,7 @@
                         <v-expansion-panel >
                         <v-expansion-panel-header>Financiera</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            Pendiente - <a href="https://api.whatsapp.com/send?phone=573137912319" class="icon-whatsapp" target="_blank" title="Escríbenos">3137371184</a>
+                            Pendiente - <a href="https://api.whatsapp.com/send?phone=573137912319"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3137371184</a>
                         </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
@@ -271,7 +271,7 @@ export default {
                     let usuario = doc.data()
                     // add user record to end
                     
-                    if(usuario.uid !== this.usuario.uid){
+                    if(usuario.uid !== this.usuario.uid && usuario.rol != 'user'){
                     // if(usuario.uid !== this.usuario.uid && usuario.rol != 'user'){
                         // add two properties
                         console.log('adicionando properties cant text')
