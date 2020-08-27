@@ -35,6 +35,13 @@
                        </div>
                        </div>
                     </v-layout>
+                    <div>
+                        <v-alert border="top" colored-border type="info" elevation="2">
+                            Horario de atención: <br> 
+                            Lunes a viernes de 8: 00 a.m - 12: 00m y 2:00 p.m. - 6:00 p.m <br>
+                            sábados: 8:00 a.m- 12:00 m.
+                        </v-alert>
+                    </div>
                 </v-card-text>
             </v-card>
                 </v-flex>
