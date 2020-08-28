@@ -22,26 +22,25 @@
                        <div class="row">
                            <div class="col-md-12">
                                <p>
-                                   Orienta su actuar a través del Proyecto Educativo a través de sus facultades y áreas administrativas que acompañar el quehacer formativo, investigativo y de proyección social.
+                                  La Vicerrectoría Académica orienta su actuar a través del Proyecto Educativo a través de sus facultades y áreas administrativas que acompañar el quehacer formativo, investigativo y de proyección social.
+                               </p>
+                               <p>
+                                Facultades, Vicerrectoría Académica. Admisiones
+                               </p>
+                                <p>
+                                <a href="https://www.ucp.edu.co/pregrado/">Oferta de Pregrados</a>
+                                </p>
+                               <p>
+                               <a href="https://www.ucp.edu.co/posgrado/">Oferta de Posgrados</a>
                                </p>
                            </div>
-                              <div class="row">
-                           <div class="col-md-12">
-                                <p><a href="https://www.ucp.edu.co/pregrado/">Oferta de Pregrados</a></p>
-                           </div>
-                           <div class="col-md-12">
-                               <p><a href="https://www.ucp.edu.co/posgrado/">Oferta de Posgrados</a></p>
-                           </div>
-                       </div>
+                              
+                           
+                           
+                       
                        </div>
                     </v-layout>
-                    <div>
-                        <v-alert border="top" colored-border type="info" elevation="2">
-                            Horario de atención: <br> 
-                            Lunes a viernes de 8: 00 a.m - 12: 00m y 2:00 p.m. - 6:00 p.m <br>
-                            sábados: 8:00 a.m- 12:00 m.
-                        </v-alert>
-                    </div>
+                   
                 </v-card-text>
             </v-card>
                 </v-flex>
@@ -61,6 +60,15 @@
                     <v-text-field @keyup.enter="ingresar" v-model="password" label="Password" type="password"></v-text-field>
                 </v-card-text> -->
                 <v-card-text>
+                    <v-layout>
+                         <div>
+                        <v-alert border="top" colored-border type="info" elevation="2">
+                            <b> Horario de atención:</b> <br> 
+                            Lunes a viernes de 8: 00 a.m - 12: 00m y 2:00 p.m. - 6:00 p.m <br>
+                            sábados: 8:00 a.m- 12:00 m.
+                        </v-alert>
+                    </div>
+                    </v-layout>
                     <v-layout justify-end>
                         <v-btn @click="ingresar" color="infoPublicidad">Inicia sesión con Google</v-btn>
                     </v-layout>

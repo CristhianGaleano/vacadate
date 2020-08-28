@@ -94,7 +94,8 @@
                     
                     <v-expansion-panels hover accordion>
                         <v-expansion-panel >
-                        <v-expansion-panel-header>Facultad de Arquitectura y Diseño</v-expansion-panel-header>
+                        <v-expansion-panel-header  style="background: #079d5b69 none repeat scroll 0% 0%;
+color: white;">F. de Arquitectura y Diseño</v-expansion-panel-header>
                         <v-expansion-panel-content>
                             Sheyen Muñoz - <a href="https://api.whatsapp.com/send?phone=573217094635"  target="_blank" title="Escríbenos"><span class="group pa-2">
         <v-icon>fab fa-whatsapp</v-icon>
@@ -105,7 +106,8 @@
                     </v-expansion-panels>
                     <v-expansion-panels hover accordion>
                         <v-expansion-panel >
-                        <v-expansion-panel-header>Facultad de Ciencias Básicas e Ingeniería</v-expansion-panel-header>
+                        <v-expansion-panel-header style="background: #079d5b69 none repeat scroll 0% 0%;
+color: white;">F. de Ciencias Básicas e Ingeniería</v-expansion-panel-header>
                         <v-expansion-panel-content>
                             Alexander Ramirez - <a href="https://api.whatsapp.com/send?phone=573138019791"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3138019791</a>
                         </v-expansion-panel-content>
@@ -113,7 +115,8 @@
                     </v-expansion-panels>
                     <v-expansion-panels hover accordion>
                         <v-expansion-panel >
-                        <v-expansion-panel-header dark>Facultad de Ciencias Económicas y Administrativas</v-expansion-panel-header>
+                        <v-expansion-panel-header style="background: #079d5b69 none repeat scroll 0% 0%;
+color: white;">F. de Ciencias Económicas y Administrativas</v-expansion-panel-header>
                         <v-expansion-panel-content>
                             Francy Molano - <a href="https://api.whatsapp.com/send?phone=573046591874"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3046591874</a>
                         </v-expansion-panel-content>
@@ -121,7 +124,8 @@
                     </v-expansion-panels>
                     <v-expansion-panels hover accordion>
                         <v-expansion-panel >
-                        <v-expansion-panel-header>Facultad de Ciencias Humanas, Sociales y de la Educación</v-expansion-panel-header>
+                        <v-expansion-panel-header style="background: #079d5b69 none repeat scroll 0% 0%;
+color: white;">F. de Ciencias Humanas, Sociales y de la Educación</v-expansion-panel-header>
                         <v-expansion-panel-content>
                             Juana Gallego - <a href="https://api.whatsapp.com/send?phone=573137912319"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3046591874</a>
                         </v-expansion-panel-content>
@@ -129,7 +133,8 @@
                     </v-expansion-panels>
                     <v-expansion-panels hover accordion>
                         <v-expansion-panel >
-                        <v-expansion-panel-header>Recepción</v-expansion-panel-header>
+                        <v-expansion-panel-header style="background: #079d5b69 none repeat scroll 0% 0%;
+color: white;">Recepción</v-expansion-panel-header>
                         <v-expansion-panel-content>
                             Danis Mosquera - Recepción
                         </v-expansion-panel-content>
@@ -137,7 +142,8 @@
                     </v-expansion-panels>
                     <v-expansion-panels hover accordion>
                         <v-expansion-panel >
-                        <v-expansion-panel-header>Financiera</v-expansion-panel-header>
+                        <v-expansion-panel-header style="background: #079d5b69 none repeat scroll 0% 0%;
+color: white;">Financiera</v-expansion-panel-header>
                         <v-expansion-panel-content>
                             Pendiente - <a href="https://api.whatsapp.com/send?phone=573137912319"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3137371184</a>
                         </v-expansion-panel-content>
