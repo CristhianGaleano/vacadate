@@ -136,7 +136,7 @@ export default {
                 }
 
 
-                await db.collection('usuarios')
+                await db.collection('usuariosvaca')
                         .doc(uidCurrentUser)
                         .set(usuario)
                         .then(function() {
@@ -146,7 +146,7 @@ export default {
                         });
 
                   //  acces for document on BD
-                let doc = await db.collection('usuarios')
+                let doc = await db.collection('usuariosvaca')
                                 .doc(uidCurrentUser)
                                 .get()
                                 console.log(doc);
@@ -158,7 +158,7 @@ export default {
                     this.enviarNotificacion('No se encontró la información del usuario', 'Error')
                 }
 
-                storage.ref('usuarios/'+uidCurrentUser+'/photo.jpg')
+                storage.ref('usuariosvaca/'+uidCurrentUser+'/photo.jpg')
                 let task = storage.put(photoCurrentUser)
                 console.log("task: "+task);
             }
