@@ -131,7 +131,7 @@ color: white;">F. de Ciencias Humanas, Sociales y de la Educación</v-expansion-
                         </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
-                    <v-expansion-panels hover accordion>
+                    <!-- <v-expansion-panels hover accordion>
                         <v-expansion-panel >
                         <v-expansion-panel-header style="background: #079d5b69 none repeat scroll 0% 0%;
 color: white;">Recepción</v-expansion-panel-header>
@@ -139,11 +139,11 @@ color: white;">Recepción</v-expansion-panel-header>
                             Danis Mosquera - Recepción
                         </v-expansion-panel-content>
                         </v-expansion-panel>
-                    </v-expansion-panels>
+                    </v-expansion-panels>-->
                     <v-expansion-panels hover accordion>
                         <v-expansion-panel >
                         <v-expansion-panel-header style="background: #079d5b69 none repeat scroll 0% 0%;
-color: white;">Financiera</v-expansion-panel-header>
+color: white;">Gestión Financiera</v-expansion-panel-header>
                         <v-expansion-panel-content>
                             Pendiente - <a href="https://api.whatsapp.com/send?phone=573137912319"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3137371184</a>
                         </v-expansion-panel-content>

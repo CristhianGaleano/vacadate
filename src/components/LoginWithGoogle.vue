@@ -10,7 +10,7 @@
                     <v-card>
                 <v-toolbar color="infoPublicidad">
                     <v-toolbar-title>
-                        La Vicerrectoría Académica
+                        Vicerrectoría Académica
                     </v-toolbar-title>
                 </v-toolbar>
                 <!-- <v-card-text>
@@ -25,7 +25,10 @@
                                   La Vicerrectoría Académica orienta su actuar a través del Proyecto Educativo a través de sus facultades y áreas administrativas que acompañar el quehacer formativo, investigativo y de proyección social.
                                </p>
                                <p>
-                                Facultades, Vicerrectoría Académica. Admisiones
+                                En este espacio estamos dispuestos a atender sus inquietudes, sugerencias y comentarios.  Contáctenos.
+                               </p>
+                               <p>
+                                   Información de Interés
                                </p>
                                 <p>
                                 <a href="https://www.ucp.edu.co/pregrado/">Oferta de Pregrados</a>
