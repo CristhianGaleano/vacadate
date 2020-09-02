@@ -176,55 +176,10 @@ export default {
             await auth.signInWithPopup(providerF)
 
             console.log("Facebook")
-            // if(auth.currentUser){
-
-            //     console.log('Usuario registrado con facebook');
-            //     let uidCurrentUser = auth.currentUser.uid
-            //     let nameCurrentUser = auth.currentUser.displayName
-            //     let emailCurrentUser = auth.currentUser.email
-            //     let photoCurrentUser = auth.currentUser.photoURL
-            //     let lastSignInTime = auth.currentUser.metadata.lastSignInTime
-            //     console.log('UID: ' + uidCurrentUser);
-            //     console.log('Name: ' + nameCurrentUser);
-            //     console.log('email: ' + emailCurrentUser);
-            //     console.log('photo: ' + photoCurrentUser);
-            //     console.log('lastSignInTime: ' + lastSignInTime);
-
-            //     let usuario = {
-            //         foto: photoCurrentUser,
-            //         uid: uidCurrentUser,
-            //         nombre: nameCurrentUser,
-            //         lastSignInTime: lastSignInTime,
-            //         rol: 'user'
-            //     }
-
-
-            //     await db.collection('usuariosvaca')
-            //             .doc(uidCurrentUser)
-            //             .set(usuario)
-            //             .then(function() {
-            //                 console.log("Document successfully written!");   
-            //             }).catch(function () {
-            //                 console.log("Document not success");
-            //             });
-
-            //       //  acces for document on BD
-            //     let doc = await db.collection('usuariosvaca')
-            //                     .doc(uidCurrentUser)
-            //                     .get()
-            //                     console.log(doc);
-            //     if(doc.exists){
-            //         console.log('Exits');
-            //         let usuario = doc.data()
-            //         this.$emit('onIngresar', usuario)
-            //     }else{
-            //         this.enviarNotificacion('No se encontró la información del usuario', 'Error')
-            //     }
-
-            //     storage.ref('usuariosvaca/'+uidCurrentUser+'/photo.jpg')
-            //     let task = storage.put(photoCurrentUser)
-            //     console.log("task: "+task);
-            // }
+            if(auth.currentUser){
+                console.log("Current")
+            
+            }
                
         } catch (error) {
             console.log("Ocurrio un error en login"+error)
