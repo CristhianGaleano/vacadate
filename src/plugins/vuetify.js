@@ -29,7 +29,7 @@ export default new Vuetify({
       current: 'es',
     },
   icons: {
-    iconfont: 'md',
-    iconfontfa: 'fa'
+    iconfont: 'fa',
+    iconfontfa: 'md'
   },
 });

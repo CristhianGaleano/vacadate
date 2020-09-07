@@ -19,7 +19,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title v-html="usuario.nombre" class="monster-font"></v-list-item-title>
+                                <v-text-area v-html="usuario.nombre" class="monster-font"></v-text-area>
                                 <v-list-item-subtitle v-html="usuario.ultimoMensaje"></v-list-item-subtitle>
                               
                             </v-list-item-content>
@@ -127,7 +127,7 @@ color: white;">F. de Ciencias Económicas y Administrativas</v-expansion-panel-h
                         <v-expansion-panel-header style="background: #079d5b69 none repeat scroll 0% 0%;
 color: white;">F. de Ciencias Humanas, Sociales y de la Educación</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            Juana Gallego - <a href="https://api.whatsapp.com/send?phone=573137912319"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3046591874</a>
+                            Juana Gallego - <a href="https://api.whatsapp.com/send?phone=573137912319"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3137912319</a>
                         </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
@@ -145,7 +145,7 @@ color: white;">Recepción</v-expansion-panel-header>
                         <v-expansion-panel-header style="background: #079d5b69 none repeat scroll 0% 0%;
 color: white;">Gestión Financiera</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            Pendiente - <a href="https://api.whatsapp.com/send?phone=573137912319"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3137371184</a>
+                            Margarita Mira - <a href="https://api.whatsapp.com/send?phone=573137371184"  target="_blank" title="Escríbenos"><span class="group pa-2"><v-icon>fab fa-whatsapp</v-icon></span>3137371184</a>
                         </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
