@@ -22,16 +22,16 @@
                                 <v-layout >
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p>
+                                        <p style="text-align: justify;">
                                             La Vicerrectoría Académica orienta su actuar a través del Proyecto Educativo a través de sus facultades y áreas administrativas que acompañar el quehacer formativo, investigativo y de proyección social.
                                         </p>
-                                        <p>
+                                        <p style="text-align: justify;">
                                             En este espacio estamos dispuestos a atender sus inquietudes, sugerencias y comentarios.  Contáctenos.
                                         </p>
-                                        <p>
+                                        <p style="text-align: justify;">
                                             Información de Interés
                                         </p>
-                                            <p>
+                                            <p style="text-align: justify;">
                                             <a href="https://www.ucp.edu.co/pregrado/">Oferta de Pregrados</a>
                                             </p>
                                         <p>
@@ -69,7 +69,7 @@
                         <v-alert border="top" colored-border type="info" elevation="2">
                             <b> Horario de atención:</b> <br> 
                             Lunes a viernes de 8:00 a.m. a 12:00 m. y 2:00 p.m. - 6:00 p.m. <br>
-                            sábados: 8:00 a.m. a 12:00 m. Zona horararia: UTC-5
+                            Sábados: 8:00 a.m. a 12:00 m. <br> Zona horaria: UTC-5
                         </v-alert>
                     </div>
                     </v-layout>
