@@ -1,13 +1,13 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
+      <div class="d-none d-sm-flex">
         <v-toolbar-title class="headline monster-font">
-           <span style="font-size: 1.2rem;"> Bienvenido a la Ventanilla Académica</span>
+           <span style="font-size: 1.2rem;">Bienvenido a la Ventanilla Académica</span>
         </v-toolbar-title>
 
       </div>
-       <v-chip class="ml-3" color="secondary">
+       <v-chip  class="ml-3 d-none d-md-flex" color="secondary">
           <v-avatar left>
         <v-icon>forum</v-icon>
       </v-avatar>Contacto en línea</v-chip>
