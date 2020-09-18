@@ -173,7 +173,8 @@ export default {
             enviandoMensaje: false,
             cid: null,
             detenerChat: null,
-            height: 0
+            height: 0,
+            sound: 'http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3'
         }
     },
     computed: {
@@ -315,6 +316,8 @@ export default {
                              case 'added':
                                 usuario.cantidadMensajes++
                                 usuario.ultimoMensaje = mensaje.texto
+                                var audio = new Audio(this.sound)
+                                audio.play();
                              break
 
                              case 'removed':
