@@ -1,5 +1,7 @@
 import firebase from '@firebase/app'
 
+
+
 // referencias a las librerias de Aut y BD
 require('firebase/auth')
 require('firebase/firestore')
@@ -36,4 +38,4 @@ var firebaseConfig = {
   const storage = firebase.storage()
 
   // exportando para poderlas utilizar en los componentes
-  export { auth, db, provider,providerF, storage }
+  export { auth, db, provider,providerF, storage}

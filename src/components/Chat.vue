@@ -142,6 +142,7 @@
 
 import { db } from '@/firebase'
 import uuidv4 from 'uuid/v4'
+import Push  from 'push.js';
 
 export default {
     props: ['usuario'],
@@ -278,6 +279,7 @@ export default {
 
         // aqui lee los mensages sin leer y lo suma
         consultarChatSinLeer () {
+            // let push = Push();
             // user current
             db.collection('usuariosvaca')
                 .doc(this.usuario.uid)
@@ -299,6 +301,11 @@ export default {
                                 usuario.cantidadMensajes++
                                 usuario.ultimoMensaje = mensaje.texto
                                 this.audio.play();
+                                Push.create('Tienes un nuevo mensaje por leer', {
+                                    body: 'Desde Ventanilla Academica',
+                                    icon: 'https://www.ucp.edu.co/portal/wp-content/themes/UCatolica/images/logo-vigi-black.png',
+                                    timeout: 32000
+                                })
                              break
 
                              case 'removed':
